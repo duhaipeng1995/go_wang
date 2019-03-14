@@ -9,10 +9,15 @@ import fastClick from 'fastclick'
 import './assets/styles/reset.css'
 // 1像素边框问题
 import './assets/styles/border.css'
+// 导入swiper轮播
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// 导入swiper轮播css
+import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
 // 使用fastClick,attach是使用fastClick一个方法
 fastClick.attach(document.body)
+Vue.use(VueAwesomeSwiper)
 
 /* eslint-disable no-new */
 new Vue({
