@@ -6,16 +6,14 @@
         <div class="header-input">
             内容
         </div>
-        <div class="header-right">城市</div>
+        <div class="header-right">{{this.city}}</div>
     </div>
 </template>
 
 <script>
 export default {
-  data () {
-    return {
-      msg: '我是header'
-    }
+  props: {
+    city: String
   }
 }
 </script>

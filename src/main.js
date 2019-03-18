@@ -13,9 +13,9 @@ import './assets/styles/border.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 // 导入swiper轮播css
 import 'swiper/dist/css/swiper.css'
-
-Vue.config.productionTip = false
 // 使用fastClick,attach是使用fastClick一个方法
+import axios from 'axios'
+Vue.prototype.$axios = axios
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
 

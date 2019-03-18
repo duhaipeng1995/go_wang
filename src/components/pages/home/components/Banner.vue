@@ -1,8 +1,8 @@
 <template>
     <div class="banner">
-        <swiper :options="swiperOption" ref="mySwiper">
+        <swiper :options="swiperOption" ref="mySwiper" v-if="showSwiper">
             <!-- slides -->
-            <swiper-slide v-for="(item,index) in imgUrlList" :key="index"><img class="img" :src="item.imgUrl" alt=""></swiper-slide>
+            <swiper-slide v-for="(item,index) in swiperList" :key="index"><img class="img" :src="item.imgUrl" alt=""></swiper-slide>
             <!-- Optional controls -->
             <div class="swiper-pagination"  slot="pagination"></div>
         </swiper>
@@ -11,24 +11,20 @@
 
 <script>
 export default {
+  props: {
+    swiperList: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true
-      },
-      imgUrlList: [
-        {
-          id: '0001',
-          imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/7c24629cca2bbf4b6292f57569617793.jpg'
-        }, {
-          id: '0002',
-          imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/ccc7532c18717399917be27d7783362f.jpg'
-        }, {
-          id: '0003',
-          imgUrl: 'https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/2bdfaa2ee8b3524ebe1bf43dc90fe283.jpg'
-        }
-      ]
+      }
+    }
+  },
+  computed: {
+    showSwiper () {
+      return this.swiperList.length
     }
   }
 }
@@ -42,7 +38,7 @@ export default {
     overflow: hidden;
     width: 100%;
     height: 0;
-    padding-bottom: 51.25%;
+    padding-bottom: 31.25%;
     background: #ccc;
 }
 .img {

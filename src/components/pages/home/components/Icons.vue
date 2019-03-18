@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper :options="swiperOption">
             <swiper-slide
             v-for="(page, index) in pages"
             :key="index">
@@ -9,9 +9,9 @@
                 :key="index"
                 >
                     <div class="icon-img">
-                        <img class="icon-img-content" src="//s.qunarzz.com/vacation_react/outbround/cruise.png">
+                        <img class="icon-img-content" :src="item.imgUrl">
                     </div>
-                    <p class="icon-text">{{item.iconContent}}</p>
+                    <p class="icon-text">{{item.desc}}</p>
                 </div>
             </swiper-slide>
         </swiper>
@@ -20,53 +20,20 @@
 
 <script>
 export default {
+  props: {
+    iconsListL: Array
+  },
   data () {
     return {
-      iconList: [
-        {
-          id: '0001',
-          imgList: '//s.qunarzz.com/vacation_react/outbround/cruise.png',
-          iconContent: '热门景点'
-        }, {
-          id: '0002',
-          imgList: '//s.qunarzz.com/vacation_react/outbround/cruise.png',
-          iconContent: '景点门票'
-        }, {
-          id: '0003',
-          imgList: '//s.qunarzz.com/vacation_react/outbround/cruise.png',
-          iconContent: '滑雪季'
-        }, {
-          id: '0004',
-          imgList: '//s.qunarzz.com/vacation_react/outbround/cruise.png',
-          iconContent: '泡温泉'
-        }, {
-          id: '0005',
-          imgList: '//s.qunarzz.com/vacation_react/outbround/cruise.png',
-          iconContent: '动植物公园'
-        }, {
-          id: '0006',
-          imgList: '//s.qunarzz.com/vacation_react/outbround/cruise.png',
-          iconContent: '一日游'
-        }, {
-          id: '0007',
-          imgList: '//s.qunarzz.com/vacation_react/outbround/cruise.png',
-          iconContent: '自然风光'
-        }, {
-          id: '0008',
-          imgList: '//s.qunarzz.com/vacation_react/outbround/cruise.png',
-          iconContent: '全部'
-        }, {
-          id: '0008',
-          imgList: '//s.qunarzz.com/vacation_react/outbround/cruise.png',
-          iconContent: '热门景点'
-        }
-      ]
+      swiperOption: {
+        autoplay: false
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.iconsListL.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

@@ -4,7 +4,7 @@
         <ul class="content-item-box">
             <li
             class="content-item border-button"
-            v-for="(list, index) in listData"
+            v-for="(list, index) in recommendList"
             :key="index"
             >
                 <!-- 图片 -->
@@ -24,40 +24,11 @@
 
 <script>
 export default {
+  props: {
+    recommendList: Array
+  },
   data () {
     return {
-      listData: [
-        {
-          imgUrl: '//userimg.qunarzz.com/imgs/201901/07/68wplkjyLKJpd96Ij76.jpg',
-          title: '含往返飞机票(含税)+5晚住宿',
-          content: '【其他】邸曼公寓(北京金茂府店)'
-        }, {
-          id: '0001',
-          imgUrl: '//userimg.qunarzz.com/imgs/201901/07/68wplkjyLKJpd96Ij76.jpg',
-          title: '含往返飞机票(含税)+5晚住宿',
-          content: '【其他】邸曼公寓(北京金茂府店)'
-        }, {
-          id: '0002',
-          imgUrl: '//userimg.qunarzz.com/imgs/201901/07/68wplkjyLKJpd96Ij76.jpg',
-          title: '含往返飞机票(含税)+5晚住宿',
-          content: '【其他】邸曼公寓(北京金茂府店)'
-        }, {
-          id: '0003',
-          imgUrl: '//userimg.qunarzz.com/imgs/201901/07/68wplkjyLKJpd96Ij76.jpg',
-          title: '含往返飞机票(含税)+5晚住宿',
-          content: '【其他】邸曼公寓(北京金茂府店)'
-        }, {
-          id: '0004',
-          imgUrl: '//userimg.qunarzz.com/imgs/201901/07/68wplkjyLKJpd96Ij76.jpg',
-          title: '含往返飞机票(含税)+5晚住宿',
-          content: '【其他】邸曼公寓(北京金茂府店)'
-        }, {
-          id: '0005',
-          imgUrl: '//userimg.qunarzz.com/imgs/201901/07/68wplkjyLKJpd96Ij76.jpg',
-          title: '含往返飞机票(含税)+5晚住宿',
-          content: '【其他】邸曼公寓(北京金茂府店)'
-        }
-      ]
     }
   }
 }
