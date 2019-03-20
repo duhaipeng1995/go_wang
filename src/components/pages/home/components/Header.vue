@@ -6,7 +6,9 @@
         <div class="header-input">
             内容
         </div>
-        <div class="header-right">{{this.city}}</div>
+        <router-link to="/city">
+            <div class="header-right">{{this.city}}&gt;</div>
+        </router-link>
     </div>
 </template>
 
@@ -39,5 +41,6 @@ export default {
     width: 1.34rem;
     float: right;
     text-align: center;
+    color: #fff;
 }
 </style>
